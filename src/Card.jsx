@@ -1,11 +1,11 @@
-const Card = ({name, title, age}) => {
+const Card = ({name, age, click}) => {
     return (
-        <div class="cards">
-            <h2>Name: {name}</h2>
-            <p>Title: {title}</p>
+        <div className="card">
+            <h3>Name: {name}</h3>
             <p>Age: {age}</p>
+            <button onClick={click}>Remove</button>
         </div>
-    )
+    );
 };
 
 export default Card;
