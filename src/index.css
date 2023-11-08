@@ -49,3 +49,16 @@ main {
 .card button:hover {
   background-color: darkgray;
 }
+
+.green-age {
+  color: seagreen;
+}
+
+.white-age {
+  color: white;
+}
+
+.image {
+  width: 250px;
+  padding: 1rem;
+}
