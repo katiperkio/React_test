@@ -3,6 +3,7 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -23,7 +24,7 @@ header h1 {
 }
 
 main {
-  min-height: calc(100vh - 180px);
+  min-height: calc(100vh - 120px);
   padding: 2rem;
 }
 
@@ -54,11 +55,27 @@ main {
   color: seagreen;
 }
 
-.white-age {
-  color: white;
+.orange-age {
+  color: orangered;
 }
 
 .image {
   width: 250px;
-  padding: 1rem;
+  margin: 1rem;
+}
+
+input {
+  display: flex;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  border-style: none;
+}
+
+input:focus {
+  transition: width 0.2s ease-in-out;
+  width: 20%;
+  outline-style: none;
+  box-shadow: #333333a0 3px 3px;
 }

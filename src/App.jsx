@@ -20,9 +20,15 @@ function App() {
     { id: 5, name: "Pasi", age: "37" },
   ]);
 
+  const [search, setSearch] = useState("");
+
   const removeHandler = (id) => {
     const updatedArray = persons.filter((person) => person.id !== id);
     setPersons(updatedArray);
+  };
+
+  const searchHandler = (e) => {
+    setSearch(e.target.value);
   };
 
   return (
@@ -32,14 +38,19 @@ function App() {
         <Greeting name="Kati" />
         <h2>This is my application</h2>
         <img className="image" src={img} alt="image" />
+        <input type="text" placeholder="Search" onChange={searchHandler} />
         <div className="cards">
-          {persons.map((person) => (
-            <Card
-              key={person.id}
-              {...person}
-              click={() => removeHandler(person.id)}
-            />
-          ))}
+          {persons
+            .filter((person) =>
+              person.name.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((person) => (
+              <Card
+                key={person.id}
+                {...person}
+                click={() => removeHandler(person.id)}
+              />
+            ))}
         </div>
       </main>
       <Footer />
